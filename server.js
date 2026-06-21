@@ -5,6 +5,7 @@ const path = require('path');
 const { sequelize } = require('./models');
 
 const authRoutes = require('./routes/auth');
+const userRoutes = require('./routes/users');
 const apartmentRoutes = require('./routes/apartment');
 const flatRoutes = require('./routes/flats');
 const visitorRoutes = require('./routes/visitors');
@@ -37,6 +38,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
 app.use('/api/apartment', apartmentRoutes);
 app.use('/api/flats', flatRoutes);
 app.use('/api/visitors', visitorRoutes);
